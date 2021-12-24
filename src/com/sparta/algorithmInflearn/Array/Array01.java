@@ -3,6 +3,7 @@ package com.sparta.algorithmInflearn.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+// 큰 수 출력하기
 public class Array01 {
     public ArrayList<Integer> solution(int n, int[] arr) {
         ArrayList<Integer> answer = new ArrayList<>();
