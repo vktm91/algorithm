@@ -1,4 +1,4 @@
-package com.sparta.algorithmInflearn.Array;
+package com.sparta.algorithmInflearn.array;
 
 import java.util.ArrayList;
 import java.util.Scanner;
