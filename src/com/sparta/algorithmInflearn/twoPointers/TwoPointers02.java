@@ -1,24 +1,28 @@
 package com.sparta.algorithmInflearn.twoPointers;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
-// 두 배열 합치기
-public class twoPointers01 {
+// 공통원소 구하기
+public class TwoPointers02 {
     public ArrayList<Integer> solution(int n, int m, int[] a, int[] b) {
         ArrayList<Integer> answer = new ArrayList<>();
-        int p1 = 0, p2 = 0;   // 포인터 p1은 a배열, p2는 b배열의 첫번째자료를 가리키고있음
+        Arrays.sort(a);   // 오름차순 정렬
+        Arrays.sort(b);
+        int p1 = 0, p2 = 0;
         while (p1 < n && p2 < m) {
-            if (a[p1] < b[p2]) answer.add(a[p1++]);   // add(a[++p1])로 하면 add후 ++가 아니고 증가먼저하고 증가된 곳을 add하게됨
-            else answer.add(b[p2++]);
+            if (a[p1] == b[p2]) {   // 같을때
+                answer.add(a[p1++]);   // p1이나 p2 아무거나 answer에 추가, p1 p2 둘 다 증가
+                p2++;
+            } else if (a[p1] < b[p2]) p1++;   // p1이 p2보다 작으면 p1 증가
+            else p2++;   // 아니면 p2 증가
         }
-        while (p1 < n) answer.add(a[p1++]);   // 아직 안끝난쪽 배열 순서대로 넣어주면 됨
-        while (p2 < m) answer.add(b[p2++]);
         return answer;
     }
 
     public static void main(String[] args) {
-        twoPointers01 T = new twoPointers01();
+        TwoPointers02 T = new TwoPointers02();
         Scanner kb = new Scanner(System.in);
         int n = kb.nextInt();
         int[] a = new int[n];
