@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Array11 {
     public int solution(int n, int[][] arr) {
         int answer = 0, max = Integer.MIN_VALUE;
-        for (int i = 1; i < n; i++) {   // i번 학생 기준
+        for (int i = 1; i <= n; i++) {   // i번 학생 기준
             int cnt = 0;
             for (int j = 1; j <= n; j++) {   // 비교대상 j번 학생
                 for (int k = 1; k <= 5; k++) {
@@ -24,7 +24,7 @@ public class Array11 {
         return answer;
     }
 
-    public static void mani(String[] args) {
+    public static void main(String[] args) {
         Array11 T = new Array11();
         Scanner kb = new Scanner(System.in);
         int n = kb.nextInt();
