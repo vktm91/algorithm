@@ -13,7 +13,7 @@ public class Array12 {
                     int pi = 0, pj = 0;
                     for (int s = 0; s < n; s++) {   // 등수(배열에서 순서) 찾기
                         if (arr[k][s] == i) pi = s;   // i학생 등수
-                        if (arr[k][s] == j) pi = s;   // j학생 등수
+                        if (arr[k][s] == j) pj = s;   // j학생 등수
                     }
                     if (pi < pj) cnt++;   // i학생의 등수가 j학생의 등수보다 앞설때 카운트
                 }
