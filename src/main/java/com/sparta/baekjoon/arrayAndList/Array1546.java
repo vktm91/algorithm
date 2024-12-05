@@ -5,8 +5,8 @@ import java.util.Scanner;
 // Baekjoon No.11720
 public class Array1546 {
     public static void main(String[] args) {
-        firstTry();
-//        secondTry();
+//        firstTry();
+        secondTry();
     }
 
     private static void firstTry() {
@@ -48,6 +48,19 @@ public class Array1546 {
     // 피연산자 중 하나만 실수형으로 바꿔주면 소수점 이하가 유지된다
 
     private static void secondTry() {
+        Scanner kb = new Scanner(System.in);
+        int n = kb.nextInt();   // 과목수
 
+        long sum = 0;
+        long max = 0;
+
+        for (int i = 0; i < n; i++) {
+            int score = kb.nextInt();
+            sum += score;
+//            max = Math.max(score, max);   // Math.max()는 두개의 매개변수 타입이 동일해야해서 if문으로 바꿔줬다.
+            if (score > max) max = score;
+        }
+
+        System.out.println(sum * 100.0 / max / n);
     }
 }
